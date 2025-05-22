@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: employee_transform
+    description: "Transforms employee data from ft_google_sheets.employees"
+    columns:
+      - name: _fivetran_synced
+        description: "Timestamp when the record was synced by Fivetran."
+        tests:
+          - not_null
+
+      - name: first_name
+        description: "First name of the employee."
+        tests:
+          - not_null
+
+      - name: role
+        description: "Role of the employee in the organization."
